@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Exploring U.S. Income and Poverty Patterns</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap">
+    <br><h1 style="text-align:center; font-size:3rem;">Exploring U.S. Income and Poverty Patterns</h1><br>
+    <div class="panel">
+        <div style="text-align: center;"><p class="sub">Use the slider to change the year. Hover points for details.
+            (2010–2023, U.S. states)</p></div>
+        <div class="controls">
+            <div class="control">
+                <label for="year">Year: <span id="year-label">2010</span></label>
+                <input id="year" max="2023" min="2010" step="1" type="range" value="2010"/>
+            </div>
+            <button id="play">▶ Play</button>
+            <div class="control">
+                <label for="sizeBy">Size by:</label>
+                <select id="sizeBy">
+                    <option value="none">None</option>
+                    <option value="povertyRate">Poverty Rate</option>
+                    <option value="eduPct">Education %</option>
+                </select>
+            </div>
+        </div>
+        <div class="viz panel" id="vis">
+            <svg id="chart"></svg>
+            <div class="tooltip" id="tooltip"></div>
+        </div>
+    </div>
+</div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

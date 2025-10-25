@@ -1,0 +1,220 @@
+/* Layout */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #222;
+    background: #fafafa;
+}
+
+.wrap {
+    max-width: none;
+    padding: 0 96px;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin: 0 0 6px;
+}
+
+.sub {
+    color: #555;
+    margin: 0 0 12px;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+/* Controls (Year + Play centered) */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px 16px;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.control label {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+/* Make the first control's slider wider for balance */
+.controls .control:first-child input[type="range"] {
+    width: 320px;
+}
+
+#play {
+    cursor: pointer;
+    padding: 6px 12px;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    align-self: center;
+    margin-top: 22px;
+}
+
+/* Put Size by on its own centered row */
+.controls .control:last-child {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6px;
+}
+
+/* Inputs */
+input[type="range"], select {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.9rem;
+}
+
+/* Make Size by dropdown a bit wider */
+#sizeBy {
+  width: 420px;
+}
+
+/* Viz area */
+.viz {
+    position: relative;
+    margin-top: 12px;
+}
+
+svg {
+    width: 100%;
+    height: min(75vh, 800px);
+}
+
+@media (max-width: 768px) {
+    svg {
+        height: 420px;
+    }
+}
+
+/* Axes & grid */
+.axis path, .axis line {
+    stroke: #cfcfcf;
+}
+
+.axis text {
+    fill: #555;
+    font-size: 12px;
+}
+
+.grid line {
+    stroke: #eee;
+}
+
+/* Points */
+.dot {
+    fill: #2b7cff;
+    fill-opacity: 0.9;
+    stroke: #fff;
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
+.dot:hover {
+    stroke-width: 1.6;
+}
+
+/* Status & misc */
+.legend {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.footer {
+    color: #666;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.error {
+    color: #c62828;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    color: #222;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+    line-height: 1.35;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translate(-50%, -120%);
+}
+
+.tooltip .t {
+    color: #666;
+}
+
+/* Custom range slider */
+input[type="range"] {
+    appearance: none;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #d0d8ff;
+    border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #d0d8ff;
+    border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2b7cff;
+    border: 2px solid #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin-top: -5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2b7cff;
+    border: 2px solid #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #1a5fff;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: #1a5fff;
+}
