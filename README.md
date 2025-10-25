@@ -14,6 +14,8 @@ and spot how shifts in income and levels of educational attainment connect to po
 
 # [Click Here](https://mpate1001.github.io/us-income-poverty-trends/)
 
+---
+
 ## How to Load and Run the Project Locally
 
 1. Ensure all files are in the same directory:
